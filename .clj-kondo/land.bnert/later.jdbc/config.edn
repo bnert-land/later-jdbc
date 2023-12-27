@@ -1,0 +1,3 @@
+{:lint-as
+ {later.jdbc/tx  next.jdbc/with-transaction
+  later.jdbc/tx& next.jdbc/with-transaction}}
