@@ -74,14 +74,12 @@
                         ((10, "random tweet"))})
       ; will throw
       #_@(later.jdbc/tx& [tt db]
-        (println "NESTED>" txn/*nested-tx*)
         (later.jdbc/q tt '{insert-into (tweets id msg)
                            values
                            ((100, "im dangerous"))}))
 
-      ; this'll throw also
+      ; this'll throw, also
       #_(later.jdbc/tx [tt db]
-        (println "NESTED>" txn/*nested-tx*)
         (later.jdbc/q tt '{insert-into (tweets id msg)
                            values
                            ((101, "im dangerous"))}))
